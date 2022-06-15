@@ -1,0 +1,80 @@
+$circleBgColor: 'red';
+$circleDiameter: 40vh;
+$circleMarginTop: 7vh;
+$circleRadius: calc($circleDiameter / 2);
+$slotDiameter: 5vh;
+$slotBorderColor: blue;
+$slotBgColor: lightblue;
+$slotBorderWidth: 1px;
+$slotRadius: calc($slotDiameter / 2);
+$slotFontSize: 12px;
+
+/* @function rotatebySlice($numberOfSlices, $position) {
+  $degrees: 360;
+  $rotationPerSlice: $degrees / $numberOfSlices;
+  @return $rotationPerSlice * $position;
+} */
+
+/* reset */
+div,
+p,
+span {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+/* end reset */
+
+.circle-container {
+  width: $circleDiameter;
+  height: $circleDiameter;
+  display: block;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: $circleMarginTop;
+}
+
+.display-circle {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: $circleBgColor;
+  width: 100%;
+  height: 100%;
+  border-width: 4px;
+  border-color: #27ae60;
+  border-style: solid;
+  border-radius: 50%;
+}
+
+.slot {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.slot .text {
+  height: $slotDiameter;
+  width: $slotDiameter;
+  border: $slotBorderWidth solid $slotBorderColor;
+  display: flex;
+  position: absolute;
+  border-radius: $slotDiameter;
+  align-items: center;
+  justify-content: center;
+  left: calc(50% - $slotRadius);
+  top: calc(0% - $slotDiameter);
+  font-size: $slotFontSize;
+}
+
+.slot {
+  transform: rotate(var(--data-rotate)); // defined in HTML
+
+  .text {
+    transform: rotate(var(--data-text-rotate)); // defined in HTML
+  }
+}
