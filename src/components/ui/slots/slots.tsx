@@ -6,7 +6,15 @@ import {
   ModeNameList,
   ScaleNameList,
 } from '../../../data/types';
-import { SCALE_INTERVALS } from '../../../data/constants';
+import {
+  BASE_NOTES,
+  KEY_NAMES,
+  SCALE_NAMES,
+  SCALE_INTERVALS,
+  MODE_NAMES,
+  NOTES,
+  DEFAULT_NOTE,
+} from '../../../data/constants';
 import {
   orderNotes,
   selectNotesByScale,
